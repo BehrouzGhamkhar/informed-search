@@ -9,7 +9,8 @@ def hamming_distance(state: List[int]) -> int:
     :return: the number of misplaced tiles in the given configuration
     """
     # YOUR CODE HERE
-    raise NotImplementedError()
+    goal_state = [i for i in range(1, 9)] + [0]
+    return len([x for (x, y) in zip(state, goal_state) if x != y])
 
 
 def manhattan_distance(state: List[int]) -> int:
@@ -19,7 +20,17 @@ def manhattan_distance(state: List[int]) -> int:
     :return: the accumulated manhattan distance between each tile and its goal position in the given configuration
     """
     # YOUR CODE HERE
-    raise NotImplementedError()
+    goal_state = [i for i in range(1, 9)] + [0]
+    distance = 0
+    for i in state:
+        goal_i = goal_state.index(i)
+        state_i = state.index(i)
+        goal_x, goal_y = goal_i // 3, goal_i % 3
+        state_x, state_y = state_i // 3, state_i % 3
+
+        distance += abs(goal_x - state_x) + abs(goal_y - state_y)
+
+    return distance
 
 
 def test_heuristics():
@@ -49,4 +60,4 @@ def greedy_search(board: Puzzle, heuristic: Callable) -> Tuple[List[int], int]:
 
 
 # YOUR CODE HERE
-raise NotImplementedError()
+test_heuristics()
