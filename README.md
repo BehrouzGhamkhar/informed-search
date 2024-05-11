@@ -1,71 +1,17 @@
-# Artificial Intelligence for Robotics 04
-
-## General Information:
-Please do not add or delete any cells. Answers belong into the corresponding cells (below the question). If a function is given (either as a signature or a full function), you should not change the name, arguments or return value of the function.
-
-If you encounter empty cells underneath the answer that can not be edited, please ignore them, they are for testing purposes.
-
-When editing an assignment there can be the case that there are variables in the kernel. To make sure your assignment works, please restart the kernel and run all cells before submitting (e.g. via Kernel -> Restart & Run All).
-
-Code cells where you are supposed to give your answer often include the line `raise NotImplementedError`. This makes it easier to automatically grade answers. If you edit the cell please outcomment or delete this line.
-
-## Submission:
-Please submit your notebook via the web interface (in the main view -> Assignments -> Submit). The assignments are **due on Monday at 20:00**.
-
-## Group Work:
-Please enter your UID (your username here) and those of your group partners into the next cell. We apply plagiarism checking, so do not submit others solutions! If an assignment has a copied solution, the task will be graded with 0 points for all people with the same solution.
-
-## Questions about the Assignment:
-If you have questions about the assignment please post them in the LEA forum before the deadline. Don't wait until the last day to post questions!
-
-### Please add the usernames of all your team members in the manner member1, member2 in next cell (example given below)
-
-member1 = 'example'
-
-member2 = 'example2'
-
-#### If you are not working in a group, then please add member2 as none2s
-
-
-```python
-# YOUR CODE HERE
-member1 = 'bghamk2s'
-
-member2 = 'mgadal2s'
-```
-
-
-```python
-# Execute this cell to make sure you correctly filled in the usernames of the team members
-
-def group_name_test():
-    for member_id in [member1, member2]:
-        assert isinstance(member_id, str), "Please give your member id as a string."
-        assert len(member_id) > 0, "You need to fill in the member id for both members"
-        assert member_id.endswith("2s"), "The member id should end with 2s (Your JupyterHub username)"
-
-group_name_test() 
-print("All tests passed!")
-```
-
-    All tests passed!
-
 
 # Task 1
 
-**[18 Point(s)]**
 
 
-# A* Theory [20 Points]
+# A* Theory 
 
 During the lecture, you have learned about the A* search algorithm and its propoerties. Please answere the following questions short and consice and be as precise as possible.
 
 
 ## Task 1.1
 
-**[2 Point(s)]**
 
-### Completeness [2 Points]
+### Completeness
 
 How is the *completeness* of an algorithm defined? Is A* complete?
 
@@ -75,9 +21,8 @@ If the search space is not infinite and the heuristic is admissible then it will
 
 ## Task 1.2
 
-**[2 Point(s)]**
 
-### Soundness [2 Points]
+### Soundness
 
 When is an algorithm be considered *sound*? Is A* sound?
 
@@ -85,10 +30,8 @@ YOUR ANSWER HERE
 
 ## Task 1.3
 
-**[2 Point(s)]**
 
-### Termination [2 Points]
-
+### Termination 
 When does A* end the search process?
 
 when:<br>
@@ -98,9 +41,8 @@ when:<br>
 
 ## Task 1.4
 
-**[5 Point(s)]**
 
-### Optimality [5 Points]
+### Optimality
 
 What does it mean when we say an algorithm is *optimal*? What are the criteria that have to be met in order for A* to be *optimal*? Provide an argument or proof on why this is required.
 
@@ -112,9 +54,8 @@ A* is optimal if heuristic is: <br>
 
 ## Task 1.5
 
-**[5 Point(s)]**
 
-### Time Complexity [5 Points]
+### Time Complexity 
 
 What is the time complexity of A*? Explain, or derive mathematically! Just writing $O(...)$ is not sufficient!
 
@@ -122,9 +63,7 @@ YOUR ANSWER HERE
 
 ## Task 1.6
 
-**[2 Point(s)]**
-
-### Consistency of a Heuristic [2 Points]
+### Consistency of a Heuristic 
 
 How is a consistent heuristic defined? Why is it a critical property in the context of the A* search algorithm?
 
@@ -132,9 +71,8 @@ YOUR ANSWER HERE
 
 # Task 2
 
-**[50 Point(s)]**
 
-# Applying Informed Search [60 Points]
+# Applying Informed Search 
 
 Informed methods help us gain information about solving a problem through its current state space. This keeps a program from blundering around blindly guessing. Informed search strategies make use of information about the path of moves we took to get where we are currently by using an *evaluation function*. This evaluation function often makes use of a *heuristic function*, that provides an estimate of the distance of a node to the goal in a relaxed version of the problem.
 
@@ -146,9 +84,8 @@ Consider a robot that works in a warehouse. The robot can carry packages on top 
 
 ## Task 2.1
 
-**[15 Point(s)]**
 
-## The 8 Puzzle [10 Points]
+## The 8 Puzzle 
 
 An 8 puzzle is a simple game consisting of a 3 x 3 grid (containing 9 squares). One of the squares is empty.
 The object is to move the squares around into different positions and having the numbers displayed in the "goal state". The squares can obviously only move along the horizontal and vertical axis and only into the **empty tile**. Therefore the problem can also be viewed as the empty tile "trading" positions with one of its neighbouring tiles.
@@ -281,9 +218,8 @@ class Node:
 
 ## Task 2.2
 
-**[5 Point(s)]**
 
-## Heuristics [5 Points]
+## Heuristics 
 
 In this part, you are tasked to implement two different admissible heuristics for the 8 puzzle: The [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) and the [Manhattan Distance](https://en.wikipedia.org/wiki/Taxicab_geometry).
 
@@ -353,9 +289,8 @@ assert manhattan_distance([1,2,3,4,0,5,6,8,7]) == 8
 
 ## Task 2.3
 
-**[10 Point(s)]**
 
-## A* Search Algorithm [10 Points]
+## A* Search Algorithm
 
 Now you will implement the A* search algorithm. To do that, you can consider the pseudocode from the lecture
 
@@ -443,9 +378,7 @@ assert t1-t0 <= 600
 
 ## Task 2.4
 
-**[10 Point(s)]**
-
-## Greedy Search [10 Points]
+## Greedy Search 
 
 Now we will implement a *greedy search algorithm*. Recall from the lecture, that the evaluation function $f(n)$ is defined as $f(n) = h(n)$, with $h(n)$ being the heuristic function.
 
@@ -514,9 +447,7 @@ assert t1-t0 <= 600
 
 ## Task 2.5
 
-**[5 Point(s)]**
-
-## Evaluation A) [5 Points]
+## Evaluation A) 
 
 Now we want to compare the performance of the different solvers. For that, run every combination of `algorithm` x `heuristic` with the puzzle configurations
 1. `[0, 1, 2, 3, 4, 5, 8, 6, 7]`
@@ -623,9 +554,9 @@ for record in evaluation_results:
 
 ## Task 2.6
 
-**[5 Point(s)]**
 
-## Evaluation B) [5 Points]
+
+## Evaluation B)
 Lastly, we want to get an estimate on how well the solvers are performing in general. For that, we first have to define a measue of *difficulty* of an initial configuration and whether ther exists a solution at all. 
 
 ### Inversions and Solvability of the 8 and 15 Puzzle
