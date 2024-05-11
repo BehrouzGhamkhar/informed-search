@@ -10,6 +10,7 @@ def run_a_star():
     assert len(path) == 23
     # The execution time is limited to 10min, so please keep this in mind when implementing your solution!
     assert t1 - t0 <= 600
+    print(path)
 
 
 def run_greedy():
@@ -21,7 +22,9 @@ def run_greedy():
     t1 = time.time()
     # The execution time is limited to 10min, so please keep this in mind when implementing your solution!
     assert t1 - t0 <= 600
+    print(path)
 
 
 if __name__ == "__main__":
     run_a_star()
+    run_greedy()

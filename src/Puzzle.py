@@ -1,5 +1,17 @@
 from typing import List, Tuple
 from utils import print_puzzle
+from heapq import heappop, heappush
+
+
+class Node:
+    def __init__(self, state: List[int], g: int, f: int, parent=None):
+        self.state = state
+        self.g = g  # Cost to reach this state
+        self.f = f  # Estimated total cost. (g + h) for A* and h for best first search
+        self.parent = parent  # Parent node
+
+    def __lt__(self, other):
+        return self.f < other.f
 
 
 class Puzzle:
@@ -12,6 +24,7 @@ class Puzzle:
         self.init_state = init_state
         self.goal_state = [i for i in range(1, 9)] + [0]
         self.explored_set = set()
+        self.fringe = []
 
     def goal_test(self, state: List[int]):
         """Test if goal state is reached
@@ -94,8 +107,8 @@ def get_possible_moves(state: List[int]) -> List[List[int]]:
 
 # YOUR CODE HERE
 state = [1, 2, 3
-        ,4, 0, 6
-        ,7, 5, 8]
+    , 4, 0, 6
+    , 7, 5, 8]
 
 moves = get_possible_moves(state)
-print(moves)
+#print(moves)
