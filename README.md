@@ -1,5 +1,5 @@
 
-# Task 1
+# Section 1
 
 
 
@@ -8,7 +8,7 @@
 During the lecture, you have learned about the A* search algorithm and its propoerties. Please answere the following questions short and consice and be as precise as possible.
 
 
-## Task 1.1
+## Section 1.1
 
 
 ### Completeness
@@ -19,7 +19,7 @@ An algorithm is complete if it terminates with a solution when one exists given 
 
 If the search space is not infinite and the heuristic is admissible then it will always return a solution and is complete otherwise if graph or branching factor is infinite and heuristic can be for example negative then it is not complete.
 
-## Task 1.2
+## Section 1.2
 
 
 ### Soundness
@@ -28,7 +28,7 @@ When is an algorithm be considered *sound*? Is A* sound?
 
 YOUR ANSWER HERE
 
-## Task 1.3
+## Section 1.3
 
 
 ### Termination 
@@ -39,7 +39,7 @@ when:<br>
 2- fringe is empty<br>
 3- if there is any limitation for resources
 
-## Task 1.4
+## Section 1.4
 
 
 ### Optimality
@@ -52,7 +52,7 @@ A* is optimal if heuristic is: <br>
 <br>2- consistent:
 
 
-## Task 1.5
+## Section 1.5
 
 
 ### Time Complexity 
@@ -61,7 +61,7 @@ What is the time complexity of A*? Explain, or derive mathematically! Just writi
 
 YOUR ANSWER HERE
 
-## Task 1.6
+## Section 1.6
 
 ### Consistency of a Heuristic 
 
@@ -69,7 +69,7 @@ How is a consistent heuristic defined? Why is it a critical property in the cont
 
 YOUR ANSWER HERE
 
-# Task 2
+# Section 2
 
 
 # Applying Informed Search 
@@ -82,7 +82,7 @@ Consider a robot that works in a warehouse. The robot can carry packages on top 
 
 ## This becomes what is known as the 8 puzzle.
 
-## Task 2.1
+## Section 2.1
 
 
 ## The 8 Puzzle 
@@ -216,7 +216,7 @@ class Node:
 
 ```
 
-## Task 2.2
+## Section 2.2
 
 
 ## Heuristics 
@@ -287,7 +287,7 @@ assert manhattan_distance([1,2,3,4,0,5,6,8,7]) == 8
 
 ```
 
-## Task 2.3
+## Section 2.3
 
 
 ## A* Search Algorithm
@@ -376,7 +376,7 @@ assert t1-t0 <= 600
 
 ```
 
-## Task 2.4
+## Section 2.4
 
 ## Greedy Search 
 
@@ -445,7 +445,7 @@ assert t1-t0 <= 600
 
 ```
 
-## Task 2.5
+## Section 2.5
 
 ## Evaluation A) 
 
@@ -552,7 +552,7 @@ for record in evaluation_results:
 
 ```
 
-## Task 2.6
+## Section 2.6
 
 
 
