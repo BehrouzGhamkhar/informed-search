@@ -7,7 +7,7 @@ class Node:
     def __init__(self, state: List[int], g: int, f: int, parent=None):
         self.state = state
         self.g = g  # Cost to reach this state
-        self.f = f  # Estimated total cost (g + h)
+        self.f = f  # Estimated total cost. (g + h) for A* and h for best first search
         self.parent = parent  # Parent node
 
     def __lt__(self, other):
