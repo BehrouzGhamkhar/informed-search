@@ -39,6 +39,33 @@ def run_greedy(puzzle_configs, heuristic):
     return records
 
 
+def inversion(configuration: List[int]) -> int:
+    """
+    Finds all inversions in a puzzle configuration and returns their total number
+    :param configuration: the configuration of the 8 puzzle to count its inversions
+    :returns: number of inversions in the puzzle configuration
+    """
+    # YOUR CODE HERE
+    inversion_count = 0
+    for i in range(len(configuration)):
+        for j in range(i + 1, len(configuration)):
+            if configuration[i] != 0 and configuration[j] != 0 and configuration[i] > configuration[j]:
+                inversion_count += 1
+    return inversion_count
+
+
+def is_solvable(configuration: List[int]) -> bool:
+    """
+    Checks whether a given puzzle configuration is solvable or not
+    :param configuration: the initial configuration of the puzzle to check for solvability
+    :returns: True if the configuration is solvable; False otherwise
+    """
+    # YOUR CODE HERE
+    inversion_count = inversion(configuration)
+
+    return inversion_count % 2 == 0
+
+
 def evaluate():
     puzzle_configs = {1: [0, 1, 2, 3, 4, 5, 8, 6, 7],
                       2: [8, 7, 6, 5, 1, 4, 2, 0, 3],
