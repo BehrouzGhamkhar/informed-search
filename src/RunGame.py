@@ -10,7 +10,7 @@ def run_a_star():
     assert len(path) == 23
     # The execution time is limited to 10min, so please keep this in mind when implementing your solution!
     assert t1 - t0 <= 600
-
+    print(path)
 
 def run_greedy():
     # Run this test cell in order to get an INDICATION of whether your implementation is working as expected.
