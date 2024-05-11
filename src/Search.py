@@ -107,5 +107,3 @@ def greedy_search(board: Puzzle, heuristic: Callable) -> Tuple[List[int], int]:
 
     return [], len(board.explored_set)
 
-# YOUR CODE HERE
-#test_heuristics()

@@ -25,6 +25,7 @@ class Puzzle:
         self.goal_state = [i for i in range(1, 9)] + [0]
         self.explored_set = set()
         self.fringe = []
+        self.puzzle_type = puzzle_type
 
     def goal_test(self, state: List[int]):
         """Test if goal state is reached
